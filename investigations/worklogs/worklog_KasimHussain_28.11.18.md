@@ -1,4 +1,4 @@
-[Authentication Test App] (https://github.com/Team-Unified/LiveProjectsTemplate/tree/master/investigations/code/AuthTestApp)
+[Authentication Test App](https://github.com/Team-Unified/LiveProjectsTemplate/tree/master/investigations/code/AuthTestApp)
 
 Created a prototype that allows the user to log into the supported social network providers within the app. 
 
