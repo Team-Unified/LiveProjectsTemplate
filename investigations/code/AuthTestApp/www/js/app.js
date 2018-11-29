@@ -28,7 +28,7 @@ angular.module('starter', ['ionic', 'ngCordovaOauth'])
 
     status: string = "";
     $scope.instagramLogin = function() {
-        $cordovaOauth.instagram("1eee6d9118fc4221be7049d1c59c47c5", ["basic"],["object options"]).then(function(result) {
+        $cordovaOauth.instagram("client_id", ["basic"],["object options"]).then(function(result) {
             console.log(JSON.stringify(result));
             alert('Token: ' + JSON.stringify(result));
           //  this.status = "Success, You're now logged into Instagram! " + JSON.stringify(result);
