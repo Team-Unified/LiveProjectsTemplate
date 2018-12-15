@@ -10,9 +10,9 @@ Use this folder to check-in code snippets and worklogs.
 
 ## [worklogs](./worklogs)
 
-Authentication Test [Link to the trello investigation](https://trello.com/c/mUIPU1ft/1-5-demo-for-authentication-using-implicit-flow)
+Authentication Test [Link to the trello investigation](https://trello.com/c/mUIPU1ft/1-5-demo-for-authentication-using-implicit-flow) [worklog](https://github.com/Team-Unified/LiveProjectsTemplate/blob/master/investigations/worklogs/worklog_KasimHussain_28.11.18.md)
 
-Screenshots - 
-[before](https://github.com/Team-Unified/LiveProjectsTemplate/blob/master/investigations/code/Authentication%20Test/Screen%20Shot%202018-11-20%20at%2002.39.54%20(2).png) [after](https://github.com/Team-Unified/LiveProjectsTemplate/blob/master/investigations/code/Authentication%20Test/Screen%20Shot%202018-11-20%20at%2002.40.15%20(2).png) [latest](https://github.com/Team-Unified/LiveProjectsTemplate/blob/master/investigations/code/Authentication%20Test/Screen%20Shot%202018-11-20%20at%2005.05.56.png)
+Local Storage Test [Link to the trello investigation](https://trello.com/c/fWdrd98s/10-5-get-current-authentication-to-work-with-local-storage-for-saving-tokens-for-retrieval-later) [worklog](https://github.com/Team-Unified/LiveProjectsTemplate/blob/master/investigations/worklogs/worklog_KasimHussain_15.12.18.md)
 
-Local Storage Test [Link to the trello investigation](https://trello.com/c/fWdrd98s/10-5-get-current-authentication-to-work-with-local-storage-for-saving-tokens-for-retrieval-later)
+Wireframe Prototype [Link to the trello investigation](https://trello.com/c/dAH7dy7X/6-use-evolous-pencil-to-illustrate-user-stories)
+[worklog](https://github.com/Team-Unified/LiveProjectsTemplate/blob/master/investigations/worklogs/worklog_KeirFowler_6.12.18.md)
