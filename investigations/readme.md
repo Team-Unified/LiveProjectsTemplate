@@ -4,7 +4,9 @@ Use this folder to check-in code snippets and worklogs.
 
 ## [code](./code)
 
-Link to the github path where the project is ()
+[Authentication Test App Code](https://github.com/Team-Unified/LiveProjectsTemplate/tree/master/investigations/code/AuthTestApp)
+
+[Local Storage Test App Code](https://github.com/Team-Unified/LiveProjectsTemplate/tree/master/investigations/code/LocalStorageTest)
 
 ## [worklogs](./worklogs)
 
