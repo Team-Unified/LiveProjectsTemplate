@@ -10,7 +10,7 @@ Use this folder to check-in code snippets and worklogs.
 
 ## [worklogs](./worklogs)
 
-Authentication Test [Trello investigation](https://trello.com/c/mUIPU1ft/1-5-demo-for-authentication-using-implicit-flow) , , 
+Authentication Test [Trello investigation](https://trello.com/c/mUIPU1ft/1-5-demo-for-authentication-using-implicit-flow)
 , [worklog](https://github.com/Team-Unified/LiveProjectsTemplate/blob/master/investigations/worklogs/worklog_KasimHussain_28.11.18.md)
 
 Local Storage Test [Trello investigation](https://trello.com/c/fWdrd98s/10-5-get-current-authentication-to-work-with-local-storage-for-saving-tokens-for-retrieval-later) , [worklog](https://github.com/Team-Unified/LiveProjectsTemplate/blob/master/investigations/worklogs/worklog_KasimHussain_15.12.18.md)
