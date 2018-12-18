@@ -8,7 +8,6 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
     }
 
     if (window.StatusBar) {
-      
       StatusBar.styleDefault();
     }
   });
@@ -20,7 +19,6 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
     ){
 
         var empty = "No Token";
-        var reset = "Token Reset";
 
     $scope.$storage = $localStorage.$default({
         instagram: empty,
@@ -73,10 +71,10 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
            }
             else { caption_text[i] = resp['data'][i]['caption']['text'] }
         }
-
+        
         $localStorage.image_post = images;
         $localStorage.caption_text = caption_text;
-        $localStorage.created_time = created_time;
+        $localStorage.created_time = created_time; 
 
         //hardcoded to pull this from the first entry in the array since it only needs to be fetched once
         //only fetch if the localstorage is null, since these values can be reused
