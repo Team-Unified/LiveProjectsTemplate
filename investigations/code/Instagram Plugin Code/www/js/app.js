@@ -60,10 +60,18 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
         { 
             //if a video is added it doesnt currently work, need to fix this or add it as an enhancement
             images[i] = resp['data'][i]['images']['standard_resolution']['url']
-            //if no caption it currently errors
-            caption_text[i] = resp['data'][i]['caption']['text']
-            //again only works if a caption is present
-            created_time[i] = new Date(parseInt (resp['data'][i]['caption']['created_time']) * 1000).toLocaleString()
+
+            //checks if the created_time exists at this path (only for no caption posts), if not it uses the path if the post has a caption
+            if (!resp['data'][i]['created_time']) { 
+                created_time[i] = new Date(parseInt (resp['data'][i]['caption']['created_time']) * 1000).toLocaleString() 
+            }
+            else { created_time[i] = new Date(parseInt (resp['data'][i]['created_time']) * 1000).toLocaleString() }
+
+            //checks if the caption exists at this path (only for no caption posts), if not it uses the path if the post has a caption
+            if (!resp['data'][i]['caption']) { 
+                caption_text[i] = "No Caption Available"
+           }
+            else { caption_text[i] = resp['data'][i]['caption']['text'] }
         }
 
         $localStorage.image_post = images;
@@ -75,7 +83,7 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
         while ($localStorage.username == null && $localStorage.fullname == null && $localStorage.profile_picture == null && $localStorage.id == null)
         {
             $localStorage.username = resp['data'][0]['user']['username']
-            $localStorage.fullname = resp['data'][0]['user']['full_name']
+            $localStorage.fullname = resp['data'][0]['user']['full_name'] 
             $localStorage.profile_picture = resp['data'][0]['user']['profile_picture']
             $localStorage.id = resp['data'][0]['user']['profile_picture']
         }
