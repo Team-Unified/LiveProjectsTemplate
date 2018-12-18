@@ -1,10 +1,18 @@
 /* Empty. Add your own CSS if you like */
-    /* .home, .bar-stable {
+  .home, .bar-stable,.item {
         background-color: #000 !important;
-    } */
+    }  
 #avi {
-    border-radius: 25px;
+    border-radius: 50px;
+    margin-bottom: 15px;
 }
 #width {
-    width: 90%;
+    width: 85%;
+    border-radius: 15px;
+}
+p {
+    color:white;
+}
+hr {
+    background-color: white;
 }

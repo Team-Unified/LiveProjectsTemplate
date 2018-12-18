@@ -1,92 +1,101 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-      <title></title>
-      <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-      <link href="css/style.css" rel="stylesheet">
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-         <link href="css/ionic.app.css" rel="stylesheet">
-         -->
-      <!-- ionic/angularjs js -->
-      <script src="lib/ionic/js/ionic.bundle.js"></script>
-      <!-- cordova script (this will be a 404 during development) -->
-      <script src="cordova.js"></script>
-      <script src="js/ng-cordova.js"></script>
-      <script src="js/sha1.js"></script>
-      <script src="js/ng-cordova-oauth.js"></script>
-      <!-- ngStorage -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
-      <!-- your app's js -->
-      <script src="js/app.js"></script>
-   </head>
-   <body ng-app="starter">
-      <ion-pane ng-controller="MainController">
-         <ion-header-bar class="bar-stable">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="js/ng-cordova.js"></script>
+    <script src="js/ng-cordova-oauth.js"></script>
+    <!-- ngStorage -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-app="starter">
+    <ion-pane ng-controller="MainController">
+        <ion-header-bar class="bar-stable">
             <h1 class="title text-Primary">Social Feed</h1>
-         </ion-header-bar>
-         <ion-content class="home">
+        </ion-header-bar>
+        <ion-content class="home">
             <center>
-
-               <ion-card>       
-                  <ion-item>
-                     <ion-avatar item-start>
-                        <img id="avi" src="{{$storage.profile_picture}}" width="50px">
-                     </ion-avatar>
-                     <br>
-                     <br>
-                     <h2 class="text-danger text-center">{{$storage.username}} </h2>
-                  </ion-item>
-                  <img src="{{$storage.image_post}}" id='width'>
-                  <ion-card-content>
-                     <p>{{$storage.caption_text}}</p>
-                     <p>{{$storage.created_time}}</p>
-                  </ion-card-content>
-               </ion-card>
-
-               <ion-card>       
-                     <ion-item>
-                        <ion-avatar item-start>
-                           <img id="avi" src="{{$storage.profile_picture}}" width="50px">
-                        </ion-avatar>
-                        <br>
-                        <br>
-                        <h2 class="text-danger text-center">{{$storage.username}} </h2>
-                     </ion-item>
-                     <img src="{{$storage.image_post}}" id='width'>
-                     <ion-card-content>
-                        <p>{{$storage.caption_text}}</p>
-                        <p>{{$storage.created_time}}</p>
-                     </ion-card-content>
-                  </ion-card>
-
-                  <ion-card>       
-                        <ion-item>
-                           <ion-avatar item-start>
-                              <img id="avi" src="{{$storage.profile_picture}}" width="50px">
-                           </ion-avatar>
-                           <br>
-                           <br>
-                           <h2 class="text-danger text-center">{{$storage.username}} </h2>
-                        </ion-item>
-                        <img src="{{$storage.image_post}}" id='width'>
-                        <ion-card-content>
-                           <p>{{$storage.caption_text}}</p>
-                           <p>{{$storage.created_time}}</p>
-                        </ion-card-content>
-                     </ion-card>
-
-               <button class="btn btn-danger" ng-click="instagramLogin()">IG Login</button>
-               <!--                
-                  --><!--                <p class="text-danger">{{$storage.instagram}}</p>
-                  -->  
-
-                  <button class="btn btn-danger" ng-click="update()">Update Feed</button>
+                <br><br>
+                <ion-avatar item-start>
+                    <img id="avi" src="{{$storage.profile_picture}}" width="70px">
+                    <h4 class="text-danger text-center">{{$storage.username}} </h4>
+                    <!-- this needs to be changed to within a forloop ie *ng-For -->
+                    <br>
+                    <img id="width" src="{{$storage.image_post[0]}}">
+                    <br>
+                    <br>
+                    <p>{{$storage.caption_text[0]}}</p>
+                    <p>{{$storage.created_time[0]}}</p>
+                </ion-avatar>
+                <br><br>
+                <ion-avatar item-start>
+                    <img id="avi" src="{{$storage.profile_picture}}" width="70px">
+                    <h4 class="text-danger text-center">{{$storage.username}} </h4>
+                    <!-- this needs to be changed to within a forloop ie *ng-For -->
+                    <br>
+                    <img id="width" src="{{$storage.image_post[1]}}">
+                    <br>
+                    <br>
+                    <p>{{$storage.caption_text[1]}}</p>
+                    <p>{{$storage.created_time[1]}}</p>
+                </ion-avatar>
+                <br><br>
+                <ion-avatar item-start>
+                    <img id="avi" src="{{$storage.profile_picture}}" width="70px">
+                    <h4 class="text-danger text-center">{{$storage.username}} </h4>
+                    <!-- this needs to be changed to within a forloop ie *ng-For -->
+                    <br>
+                    <img id="width" src="{{$storage.image_post[2]}}">
+                    <br>
+                    <br>
+                    <p>{{$storage.caption_text[2]}}</p>
+                    <p>{{$storage.created_time[2]}}</p>
+                </ion-avatar>
+                <br><br>
+                <ion-avatar item-start>
+                    <img id="avi" src="{{$storage.profile_picture}}" width="70px">
+                    <h4 class="text-danger text-center">{{$storage.username}} </h4>
+                    <!-- this needs to be changed to within a forloop ie *ng-For -->
+                    <br>
+                    <img id="width" src="{{$storage.image_post[3]}}">
+                    <br>
+                    <br>
+                    <p>{{$storage.caption_text[3]}}</p>
+                    <p>{{$storage.created_time[3]}}</p>
+                </ion-avatar>
+                <br><br>
+                <ion-avatar item-start>
+                    <img id="avi" src="{{$storage.profile_picture}}" width="70px">
+                    <h4 class="text-danger text-center">{{$storage.username}} </h4>
+                    <!-- this needs to be changed to within a forloop ie *ng-For -->
+                    <br>
+                    <img id="width" src="{{$storage.image_post[4]}}">
+                    <br>
+                    <br>
+                    <p>{{$storage.caption_text[4]}}</p>
+                    <p>{{$storage.created_time[4]}}</p>
+                </ion-avatar>
+                <br><br>
+                <button class="btn btn-danger" ng-click="instagramLogin()">IG Login</button>
+                <button class="btn btn-danger" ng-click="update()">Update Feed</button>
+                <button class="btn btn-danger" ng-click="resetAll()">Delete Cache</button>
+                <br><br>
             </center>
-         </ion-content>
-      </ion-pane>
-   </body>
+        </ion-content>
+    </ion-pane>
+</body>
+
 </html>
