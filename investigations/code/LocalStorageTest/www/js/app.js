@@ -1,8 +1,8 @@
-
 angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+
     if (window.cordova && window.Keyboard) {
       window.Keyboard.hideKeyboardAccessoryBar(true);
     }
@@ -20,7 +20,7 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
     ){
 
     var empty = "No Token";
-
+        
     $scope.$storage = $localStorage.$default({
         instagram: empty,
         linkedin: empty,
@@ -28,9 +28,8 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
         reddit: empty
     });
 
-    status: string = "";
     $scope.instagramLogin = function() {
-        $cordovaOauth.instagram("CLIENT_ID_HERE", ["basic"],["object options"]).then(function(result) {
+        $cordovaOauth.instagram("e02772e6e7b04b4580e5067e3df7c4e9", ["basic"]).then(function(result) {
             console.log(JSON.stringify(result));
             $localStorage.instagram = JSON.stringify(result);
         }, function(error) {
@@ -39,7 +38,7 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
     }  
 
     $scope.linkedinLogin = function() {
-        $cordovaOauth.linkedin("CLIENT_ID", "CLIENT_SECRET", ["r_basicprofile", "r_emailaddress"], "STATE_STRING").then(function(result) {
+        $cordovaOauth.linkedin("863230xmne3ljd", "yiY4wIy2275byE3p", ["r_basicprofile", "r_emailaddress"], "teamunified-mmu-12345").then(function(result) {
             console.log(JSON.stringify(result));
             $localStorage.linkedin = JSON.stringify(result);
         }, function(error) {
@@ -48,7 +47,7 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
     }
 
     $scope.twitterLogin = function() {
-      $cordovaOauth.twitter("CLIENT_ID","CLIENT_SECRET").then(function(result) {
+      $cordovaOauth.twitter("lbLHNqHsAc4fs9Z84YSGZ3dPM","vWuBYax5fxqt1Gdo6HmU87fhBVdprdYL6pMSHoGE1Avg2LQL1t").then(function(result) {
           console.log(JSON.stringify(result));
           $localStorage.twitter = JSON.stringify(result);
       }, function(error) {
@@ -57,15 +56,15 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
   }
 
   $scope.facebookLogin = function() {
-      $cordovaOauth.facebook("CLIENT_ID_HERE", ["email"], {"auth_type": "rerequest"}).then(function(result) {
+    $cordovaOauth.facebook("CLIENT_ID_HERE", ["email"], {"auth_type": "rerequest"}).then(function(result) {
         console.log(JSON.stringify(result));
-        $localStorage.twitter = JSON.stringify(result);
+        $localStorage.facebook = JSON.stringify(result);
     }, function(error) {
         console.log(JSON.stringify(error));
     });
 }
     $scope.redditLogin = function() {
-    $cordovaOauth.reddit("clientId", "clientSecret", ["appScope"], ["object options"]).then(function(result) {
+    $cordovaOauth.reddit("6IGRiZgCbkF48w", "Xk_Jk4s_9B15WenCTGSXcDp7-ng", ["History"]).then(function(result) {
         console.log(JSON.stringify(result));
         $localStorage.reddit = JSON.stringify(result);
     }, function(error) {

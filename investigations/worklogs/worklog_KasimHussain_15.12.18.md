@@ -1,4 +1,4 @@
-[Local Storage Test App](https://github.com/Team-Unified/LiveProjectsTemplate/tree/master/investigations/code/AuthTestApp)
+[Local Storage Test App](https://github.com/Team-Unified/LiveProjectsTemplate/tree/master/investigations/code/LocalStorageTest)
 
 Since i already had a working authentication test app i pulled that from the teams repo and made changes to it to allow for caching the users tokens after they successfully authenticate their account.
 
@@ -13,3 +13,7 @@ The app now caches the tokens, if a user is setting up the app for the first tim
 This investigation was completed successfully without any errors or problems along the way
 
 2018-12-15 06:27:09
+
+***UPDATED 2018-12-20 14:16:40***
+
+Wrong link - Updated now
