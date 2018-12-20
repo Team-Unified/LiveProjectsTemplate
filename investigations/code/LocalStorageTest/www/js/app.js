@@ -29,7 +29,7 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
     });
 
     $scope.instagramLogin = function() {
-        $cordovaOauth.instagram("e02772e6e7b04b4580e5067e3df7c4e9", ["basic"]).then(function(result) {
+        $cordovaOauth.instagram("", ["basic"]).then(function(result) {
             console.log(JSON.stringify(result));
             $localStorage.instagram = JSON.stringify(result);
         }, function(error) {
@@ -38,7 +38,7 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
     }  
 
     $scope.linkedinLogin = function() {
-        $cordovaOauth.linkedin("863230xmne3ljd", "yiY4wIy2275byE3p", ["r_basicprofile", "r_emailaddress"], "teamunified-mmu-12345").then(function(result) {
+        $cordovaOauth.linkedin("", "", ["r_basicprofile", "r_emailaddress"], "teamunified-mmu-12345").then(function(result) {
             console.log(JSON.stringify(result));
             $localStorage.linkedin = JSON.stringify(result);
         }, function(error) {
@@ -47,7 +47,7 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
     }
 
     $scope.twitterLogin = function() {
-      $cordovaOauth.twitter("lbLHNqHsAc4fs9Z84YSGZ3dPM","vWuBYax5fxqt1Gdo6HmU87fhBVdprdYL6pMSHoGE1Avg2LQL1t").then(function(result) {
+      $cordovaOauth.twitter("","").then(function(result) {
           console.log(JSON.stringify(result));
           $localStorage.twitter = JSON.stringify(result);
       }, function(error) {
@@ -64,7 +64,7 @@ angular.module('starter', ['ionic', 'ngCordovaOauth','ngStorage'])
     });
 }
     $scope.redditLogin = function() {
-    $cordovaOauth.reddit("6IGRiZgCbkF48w", "Xk_Jk4s_9B15WenCTGSXcDp7-ng", ["History"]).then(function(result) {
+    $cordovaOauth.reddit("", "", [""]).then(function(result) {
         console.log(JSON.stringify(result));
         $localStorage.reddit = JSON.stringify(result);
     }, function(error) {
