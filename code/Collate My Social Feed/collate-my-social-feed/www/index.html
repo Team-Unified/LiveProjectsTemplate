@@ -34,15 +34,77 @@
 
   </head>
   <body ng-app="starter">
-    <ion-pane class="home">
+    <ion-pane class="home" ng-controller="homeController">
       <ion-header-bar class="bar-stable">
-          <button class="btn btn-primary" ng-click="">Refresh Feed</button>     
-          <button class="btn btn-danger" ng-click="">Settings Pane</button>
-          <button class="btn btn-success" ng-click="">Add Account</button>
+          <button class="btn btn-primary" ng-click="instagramUpdate()">Refresh Feed</button>     
+          <button class="btn btn-danger" ng-click="resetAll()">Settings Pane</button>
+          <button class="btn btn-success" ng-click="instagramLogin()">Add Account</button>
           <!-- <h1 class="title text-center">My Feed</h1> -->
       </ion-header-bar>
       <ion-content>       
-   
+        <center>          
+         <!--  <br><br>
+            <button class="btn btn-danger" ng-click="instagramLogin()">IG Login</button>
+            <button class="btn btn-danger" ng-click="update()">Update Feed</button>
+            <button class="btn btn-danger" ng-click="resetAll()">Delete Cache</button>
+          <br><br> -->
+          <br><br>
+          <br><br>
+           <ion-avatar item-start>
+              <img id="avi" src="{{$storage.profile_picture}}" width="70px">
+              <h4 class="text-danger text-center">{{$storage.username}} </h4>
+              <br>
+              <img id="width" src="{{$storage.image_post[0]}}">
+              <br>
+              <br>
+              <p>{{$storage.caption_text[0]}}</p>
+              <p>{{$storage.created_time[0]}}</p>
+          </ion-avatar>
+          <br><br>
+          <ion-avatar item-start>
+              <img id="avi" src="{{$storage.profile_picture}}" width="70px">
+              <h4 class="text-danger text-center">{{$storage.username}} </h4>
+              <br>
+              <img id="width" src="{{$storage.image_post[1]}}">
+              <br>
+              <br>
+              <p>{{$storage.caption_text[1]}}</p>
+              <p>{{$storage.created_time[1]}}</p>
+          </ion-avatar>
+          <br><br>
+          <ion-avatar item-start>
+              <img id="avi" src="{{$storage.profile_picture}}" width="70px">
+              <h4 class="text-danger text-center">{{$storage.username}} </h4>
+              <br>
+              <img id="width" src="{{$storage.image_post[2]}}">
+              <br>
+              <br>
+              <p>{{$storage.caption_text[2]}}</p>
+              <p>{{$storage.created_time[2]}}</p>
+          </ion-avatar>
+          <br><br>
+          <ion-avatar item-start>
+              <img id="avi" src="{{$storage.profile_picture}}" width="70px">
+              <h4 class="text-danger text-center">{{$storage.username}} </h4>
+              <br>
+              <img id="width" src="{{$storage.image_post[3]}}">
+              <br>
+              <br>
+              <p>{{$storage.caption_text[3]}}</p>
+              <p>{{$storage.created_time[3]}}</p>
+          </ion-avatar>
+          <br><br>
+          <ion-avatar item-start>
+              <img id="avi" src="{{$storage.profile_picture}}" width="70px">
+              <h4 class="text-danger text-center">{{$storage.username}} </h4>
+              <br>
+              <img id="width" src="{{$storage.image_post[4]}}">
+              <br>
+              <br>
+              <p>{{$storage.caption_text[4]}}</p>
+              <p>{{$storage.created_time[4]}}</p>
+          </ion-avatar>
+      </center>
       </ion-content>            
       </ion-pane>      
   </body>

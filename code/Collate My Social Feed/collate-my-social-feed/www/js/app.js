@@ -26,7 +26,6 @@ angular.module('starter', ['ngStorage', 'ngCordovaOauth', 'ionic'])
       linkedIn: empty,
       reddit: empty,
       facebook: empty,
-
   });
 
   var instagramRequest = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=';
@@ -49,10 +48,10 @@ angular.module('starter', ['ngStorage', 'ngCordovaOauth', 'ionic'])
 $scope.instagramUpdate = function() {
 
   req = instagramRequest + $localStorage.instagram; 
-  const http = new XMLHttpRequest()
-  http.open("GET", req)
-  http.send()
-  http.onload = () => resp = JSON.parse(http.response);
+  var xhr = new XMLHttpRequest()
+  xhr.open("GET", req)
+  xhr.send()
+  xhr.onload = () => resp = JSON.parse(xhr.response);
 
   // this needs to be done in like a ForEach or something along them lines for how it works for Instagram, 
   // so then it will loop as many times there's objects in the response
@@ -135,5 +134,10 @@ $scope.facebookLogin = function() {
       console.log(JSON.stringify(error));
   });
 } 
+
+$scope.resetAll = function() {
+    alert('Deleting cached files and tokens');
+    $localStorage.$reset();
+}
 
 });
