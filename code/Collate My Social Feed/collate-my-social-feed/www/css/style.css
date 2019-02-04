@@ -1,1 +1,13 @@
 /* Empty. Add your own CSS if you like */
+ion-header-bar {
+    margin-top: 25px;
+}
+
+.btn{
+    margin: 0px 2px;
+}
+
+.home,.bar-stable,h1 {
+   /* background-color: #000 !important;
+    color:white !important; */
+}    
