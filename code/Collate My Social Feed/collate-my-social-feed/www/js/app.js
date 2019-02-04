@@ -31,7 +31,7 @@ angular.module('starter', ['ngStorage', 'ngCordovaOauth', 'ionic'])
   var instagramRequest = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=';
   var facebookRequest = "";
   var twitterRequest = "";
-  var redditRequest = "";
+  var redditRequest = "https://www.reddit.com/api/v1/subreddits_default";
   var linkedinRequest = "";
   var resp;
 
@@ -52,7 +52,7 @@ $scope.instagramUpdate = function() {
   xhr.open("GET", req)
   xhr.send()
   xhr.onload = () => resp = JSON.parse(xhr.response);
-
+  
   // this needs to be done in like a ForEach or something along them lines for how it works for Instagram, 
   // so then it will loop as many times there's objects in the response
   // right now i save the response to local storage, when i finish this to work the way it should then we won't need local storage?
@@ -117,9 +117,9 @@ $scope.twitterLogin = function() {
 
 //reddit login
 $scope.redditLogin = function() {
-  $cordovaOauth.instagram("CLIENT_ID",["basic"]).then(function(result) {
+  $cordovaOauth.reddit("","",["identity"]).then(function(result) {
      
-      $localStorage.instagram = result.access_token;
+      $localStorage.reddit = result.access_token;
   }, function(error) {
       console.log(JSON.stringify(error));
   });
@@ -127,7 +127,7 @@ $scope.redditLogin = function() {
 
 //facebook login
 $scope.facebookLogin = function() {
-  $cordovaOauth.instagram("CLIENT_ID",["basic"]).then(function(result) {
+  $cordovaOauth.instagram("CLIENT_ID",["identity"]).then(function(result) {
      
       $localStorage.instagram = result.access_token;
   }, function(error) {
