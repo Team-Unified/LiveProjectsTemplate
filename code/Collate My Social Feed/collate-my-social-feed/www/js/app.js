@@ -92,7 +92,14 @@ angular.module('starter', ['ngStorage', 'ngCordovaOauth', 'ionic'])
 
         //linkedin login
         $scope.linkedinLogin = function () {
-            $cordovaOauth.instagram("CLIENT_ID", ["basic"]).then(function (result) {
+            //is userAuthenticated? if so don't continue authentication
+            var isLinkedinAuthenticated = new Boolean(false);
+            if ($localStorage.linkedIn != null) {
+                isLinkedinAuthenticated = true;
+                alert("You're already authenticated with Linkedin!");
+            }
+            else
+            $cordovaOauth.linkedin("CLIENT_ID", "SECRET", ["r_basicprofile", "r_emailaddress"], "teamunified-mmu-12345").then(function(result) {
                 $localStorage.instagram = result.access_token;
             }, function (error) {
                 console.log(JSON.stringify(error));
@@ -101,7 +108,14 @@ angular.module('starter', ['ngStorage', 'ngCordovaOauth', 'ionic'])
 
         //twitter login
         $scope.twitterLogin = function () {
-            $cordovaOauth.instagram("CLIENT_ID", ["basic"]).then(function (result) {
+              //is userAuthenticated? if so don't continue authentication
+              var isTwitterAuthenticated = new Boolean(false);
+              if ($localStorage.twitter != null) {
+                  isTwitterAuthenticated = true;
+                  alert("You're already authenticated with Twitter!");
+              }
+              else
+            $cordovaOauth.twitter("CLIENT_ID","SECRET").then(function(result) {
                 $localStorage.instagram = result.access_token;
             }, function (error) {
                 console.log(JSON.stringify(error));
@@ -110,7 +124,14 @@ angular.module('starter', ['ngStorage', 'ngCordovaOauth', 'ionic'])
 
         //reddit login
         $scope.redditLogin = function () {
-            $cordovaOauth.reddit("", "", ["identity"]).then(function (result) {
+              //is userAuthenticated? if so don't continue authentication
+              var isRedditAuthenticated = new Boolean(false);
+              if ($localStorage.reddit != null) {
+                  isRedditAuthenticated = true;
+                  alert("You're already authenticated with Reddit!");
+              }
+              else
+            $cordovaOauth.reddit("CLIENT_ID", "SECRET", ["identity"]).then(function (result) {
                 $localStorage.reddit = result.access_token;
             }, function (error) {
                 console.log(JSON.stringify(error));
@@ -119,7 +140,14 @@ angular.module('starter', ['ngStorage', 'ngCordovaOauth', 'ionic'])
 
         //facebook login
         $scope.facebookLogin = function () {
-            $cordovaOauth.instagram("CLIENT_ID", ["identity"]).then(function (result) {
+              //is userAuthenticated? if so don't continue authentication
+              var isFacebookAuthenticated = new Boolean(false);
+              if ($localStorage.facebook != null) {
+                  isFacebookAuthenticated = true;
+                  alert("You're already authenticated with Facebook!");
+              }
+              else
+            $cordovaOauth.facebook("CLIENT_ID", ["email"], {"auth_type": "rerequest"}).then(function(result) {
                 $localStorage.instagram = result.access_token;
             }, function (error) {
                 console.log(JSON.stringify(error));
