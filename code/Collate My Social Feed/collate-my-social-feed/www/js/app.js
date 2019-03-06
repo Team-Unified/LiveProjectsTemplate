@@ -20,10 +20,8 @@ angular.module('starter', ['ngStorage', 'ngCordovaOauth', 'ionic'])
         $scope.$storage = $localStorage.$default({ instagram: empty, twitter: empty, linkedIn: empty, reddit: empty, facebook: empty, });
 
         var instagramRequest = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=';
-        var facebookRequest = "";
-        var twitterRequest = "";
-        var redditRequest = "https://www.reddit.com/api/v1/subreddits_default";
-        var linkedinRequest = "";
+        var redditRequest = "https://api.reddit.com/r/";    
+        var subreddit = "";
         var resp;
 
         //instagram login
@@ -41,7 +39,7 @@ angular.module('starter', ['ngStorage', 'ngCordovaOauth', 'ionic'])
                     console.log(JSON.stringify(error));
                 });
         }
-
+        
         $scope.instagramUpdate = function () {
 
             req = instagramRequest + $localStorage.instagram;
@@ -115,27 +113,24 @@ angular.module('starter', ['ngStorage', 'ngCordovaOauth', 'ionic'])
                   alert("You're already authenticated with Twitter!");
               }
               else
-            $cordovaOauth.twitter("CLIENT_ID","SECRET").then(function(result) {
+            $cordovaOauth.twitter("CLIENTID","CLIENTSECRET").then(function(result) {
                 $localStorage.instagram = result.access_token;
             }, function (error) {
                 console.log(JSON.stringify(error));
             });
         }
 
-        //reddit login
-        $scope.redditLogin = function () {
-              //is userAuthenticated? if so don't continue authentication
-              var isRedditAuthenticated = new Boolean(false);
-              if ($localStorage.reddit != null) {
-                  isRedditAuthenticated = true;
-                  alert("You're already authenticated with Reddit!");
-              }
-              else
-            $cordovaOauth.reddit("CLIENT_ID", "SECRET", ["identity"]).then(function (result) {
-                $localStorage.reddit = result.access_token;
-            }, function (error) {
-                console.log(JSON.stringify(error));
-            });
+        $scope.redditUpdate = function () {
+            //set the var to that of which input tag is 
+            subreddit = angular.element('#query').val()
+            //sitch together req url, subreddit, and top to JSON 
+            req = redditRequest + subreddit + "/top.json?";
+            //used for debug, making sure the URL is joined together as expected
+            console.log("API GET request sent to URL: " + req)
+            var xhr = new XMLHttpRequest()
+            xhr.open("GET", req)
+            xhr.send()
+            xhr.onload = () => resp = JSON.parse(xhr.response);  
         }
 
         //facebook login

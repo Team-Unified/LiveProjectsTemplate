@@ -11,3 +11,9 @@ ion-header-bar {
    /* background-color: #000 !important;
     color:white !important; */
 }    
+
+#query ::placeholder {
+    text-align: center;
+    width:"25%";
+   /* background-color: black; */
+}
