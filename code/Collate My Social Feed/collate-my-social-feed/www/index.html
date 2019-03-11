@@ -43,7 +43,7 @@
               <!-- maybe move this to the settings page??? -->
                 <input id="query" type="text" placeholder="Search for a Subreddit" ng-model="input"></input>
           </center> 
-          <button class="btn btn-primary" ng-click="redditUpdate()">Refresh</button>     
+          <button class="btn btn-primary" ng-click="redditUpdate(); instagramUpdate()">Search</button>     
           <!-- <button class="btn btn-primary" ng-click="instagram Update()">Refresh</button>      -->
           <button class="btn btn-danger" ng-click="resetAll()">Settings</button>
           <button class="btn btn-success" ng-click="instagramLogin()">Add</button>
@@ -57,16 +57,42 @@
           <br><br> -->
           <br><br>
           <br><br>
+
+
            <ion-avatar item-start>
-              <img id="avi" src="{{$storage.profile_picture}}" width="70px">
-              <h4 class="text-danger text-center">{{$storage.username}} </h4>
+              <h4 class="text-danger text-center">{{$storage.title[0]}} </h4>
               <br>
-              <img id="width" src="{{$storage.image_post[0]}}">
+              <img id="width" src="{{$storage.thumbnail_post[0]}}">
               <br>
               <br>
-              <p>{{$storage.caption_text[0]}}</p>
-              <p>{{$storage.created_time[0]}}</p>
+              <p>{{$storage.url[0]}}</p>
           </ion-avatar>
+          <ion-avatar item-start>
+            <h4 class="text-danger text-center">{{$storage.title[1]}} </h4>
+            <br>
+            <img id="width" src="{{$storage.thumbnail_post[1]}}">
+            <br>
+            <br>
+            <p>{{$storage.url[1]}}</p>
+        </ion-avatar><ion-avatar item-start>
+          <h4 class="text-danger text-center">{{$storage.title[2]}} </h4>
+          <br>
+          <img id="width" src="{{$storage.thumbnail_post[2]}}">
+          <br>
+          <br>
+          <p>{{$storage.url[2]}}</p>
+      </ion-avatar>
+      <ion-avatar item-start>
+        <h4 class="text-danger text-center">{{$storage.title[3]}} </h4>
+        <br>
+        <img id="width" src="{{$storage.thumbnail_post[3]}}">
+        <br>
+        <br>
+        <p>{{$storage.url[3]}}</p>
+    </ion-avatar>
+
+
+
           <br><br>
           <ion-avatar item-start>
               <img id="avi" src="{{$storage.profile_picture}}" width="70px">
